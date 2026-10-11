@@ -1,0 +1,59 @@
+# 敏感配置文件
+config.toml
+
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+venv/
+ENV/
+env/
+
+# IDE配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 临时文件
+*.log
+*.tmp
+.DS_Store
+
+# 生成的音频文件
+tts_*.mp3
+tts_*.wav
+tts_*.ogg
+
+# 数据目录（包含临时音频文件）
+data/
+
+# 规范工作流目录
+.spec-workflow/
+
+# Claude配置
+.claude/
+
+# ===== 主人本地副本规则（2026-08-19 重写：从豁免改为严格忽略）=====
+# 主人哲学变更：以前豁免 config.toml / cookies / data 入库方便回溯；现在改为默认忽略。
+# 历史 commit 中的真值密钥暂保留（git filter-repo 标记为 Phase 2，待主人定夺），
+# 但未来增量不再入库；plugin-level CLAUDE.md 旧 SHA 引用仍有效。
+#
+# 默认忽略敏感文件（含真值密钥）
+config.toml
+config.toml.bak
+config.toml.bak.*
+config.toml.local
+config.local.toml
+cookies-*.json
+data/
+
+# 允许追踪的例外（按需取消注释；本仓库作为 MaiBot 插件 source of truth）：
+#!config.example.toml
+#!config.toml.example
+#!data/.gitkeep
+# OMC CLI 状态文件（不纳入仓库）
+.omc/
